@@ -24,14 +24,14 @@ public class Sketch : MonoBehaviour {
             float z = 0.0f;
             if (i % 2 == 0)
             {
-                var newObject = (GameObject)Instantiate(myPrefab, new Vector3(x, y, z), Quaternion.identity);
+                var newObject = (GameObject)Instantiate(myPrefab, new Vector3(x, y+2, z), Quaternion.identity);
                 newObject.GetComponent<CubeScript>().SetSize(.45f * (1.0f - perc));
                 newObject.GetComponent<CubeScript>().rotateSpeed = .2f + perc * 4.0f;
                 newObject.GetComponent<CubeScript>().cubeNumber = i + 2;
             }
             else
             {
-                var newObject = (GameObject)Instantiate(myPrefab2, new Vector3(x, y, z), Quaternion.identity);
+                var newObject = (GameObject)Instantiate(myPrefab2, new Vector3(x, y-2, z), Quaternion.identity);
                 newObject.GetComponent<SphereScript>().SetSize(.45f * (1.0f - perc));
                 newObject.GetComponent<SphereScript>().rotateSpeed = .2f + perc * 4.0f;
                 newObject.GetComponent<SphereScript>().SphereNumber = i + 2;
